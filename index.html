@@ -2,208 +2,72 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="tTo6SETo0ApY5VSVHNG5nooXLx_bpXC8mtUZYsv9i_w" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>معاك وين ماكان | نظام الإدارة المتطور 2025</title>
+  <title>Ma'ak Wein Makan | نظام الإدارة المتطور 2025</title>
+
+  <meta name="description" content="منصة Ma'ak Wein Makan - النظام المتطور لإدارة الركاب والسائقين لعام 2025. سجل الآن كراكب أو سائق.">
+  <meta name="keywords" content="توصيل، ركاب، سائقين، نظام إدارة، Ma'ak Wein Makan، الأردن">
+
+  <meta property="og:title" content="Ma'ak Wein Makan | نظام الإدارة 2025">
+  <meta property="og:description" content="سجل بياناتك الآن في نظام التوصيل الأحدث.">
+  <meta property="og:image" content="https://i.postimg.cc/9XYwQ43D/watermarked-e9c96f62-e8f4-48af-93b9-0054682515a0.png">
+
   <style>
     :root {
       --primary: #FF3D00; --secondary: #00E676; --accent: #FFD600; 
       --dark: #1A237E; --bg: #F0F2F5; --pink: #FF4081; --blue: #2196F3;
     }
-
     body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); color: #333; overflow-x: hidden; }
-
     header { background: var(--dark); padding: 30px 20px; text-align: center; border-bottom: 6px solid var(--accent); }
-    .logo-box {
-      display: inline-block; padding: 15px 40px; border: 4px solid var(--accent);
-      border-radius: 20px; background: linear-gradient(145deg, #1e2a5e, #1a237e);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: perspective(500px) rotateX(10deg);
-    }
+    .logo-box { display: inline-block; padding: 15px 40px; border: 4px solid var(--accent); border-radius: 20px; background: linear-gradient(145deg, #1e2a5e, #1a237e); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transform: perspective(500px) rotateX(10deg); }
     .logo-text { font-size: 2.8rem; font-weight: 900; color: var(--accent); text-shadow: 2px 2px 0px #000; margin: 0; }
-
     main { padding: 30px 20px; display: flex; flex-direction: column; align-items: center; min-height: 60vh; }
     .nav-bar { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; justify-content: center; }
-    
     .btn { padding: 12px 25px; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; color: white; transition: 0.3s; }
     .btn-r { background: var(--primary); } .btn-d { background: var(--secondary); color: #1a237e; } .btn-a { background: var(--dark); }
     .btn:hover { transform: scale(1.05); }
-
     .section { display: none; background: white; padding: 30px; border-radius: 25px; width: 100%; max-width: 900px; box-shadow: 0 15px 45px rgba(0,0,0,0.1); }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
     .full { grid-column: span 2; }
     input, select { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; box-sizing: border-box; }
-
-    .stats-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 25px; }
-    .stat-card { padding: 15px; border-radius: 15px; text-align: center; color: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    .stat-val { display: block; font-size: 1.8rem; font-weight: 900; }
-
-    .tabs { display: flex; border-bottom: 2px solid #eee; margin-bottom: 15px; }
-    .tab { padding: 10px 20px; cursor: pointer; font-weight: bold; opacity: 0.6; }
-    .tab.active { border-bottom: 3px solid var(--dark); opacity: 1; color: var(--dark); }
-
     footer { background: var(--dark); padding: 50px 0 20px; position: relative; margin-top: 50px; color: white; text-align: center; }
     .road { width: 100%; height: 50px; background: #222; position: relative; border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent); overflow: hidden; }
     .car-container { position: absolute; right: -100px; top: 8px; width: 70px; animation: drive 10s linear infinite; }
     @keyframes drive { from { right: -100px; } to { right: 110%; } }
-
-    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-    th, td { padding: 10px; border-bottom: 1px solid #eee; text-align: right; font-size: 0.9rem; }
-    th { background: #f8f9fa; color: var(--dark); }
-
-    @media print { .nav-bar, header, footer, .btn-print, .tabs { display: none !important; } .section { display: block !important; box-shadow: none; border: none; } }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="logo-box"><h1 class="logo-text">معاك وين ماكان</h1></div>
-</header>
-
-<main>
-  <div class="nav-bar">
-    <button class="btn btn-r" onclick="show('sec-r')">تسجيل راكب 🙋‍♂️</button>
-    <button class="btn btn-d" onclick="show('sec-d')">تسجيل سائق 🚗</button>
-    <button class="btn btn-a" onclick="show('sec-login')">لوحة المشرف 🔐</button>
-  </div>
-
-  <div id="sec-r" class="section">
-    <h2 style="color:var(--primary)">عضوية راكب (الرسوم: 1 دينار)</h2>
-    <div class="form-grid">
-      <input type="text" id="rn" placeholder="الاسم الكامل" class="full">
-      <select id="rg"><option value="ذكر">ذكر</option><option value="أنثى">أنثى</option></select>
-      <input type="tel" id="rp" placeholder="رقم الموبايل">
-      <input type="text" id="rf" placeholder="نقطة الانطلاق (من)">
-      <input type="text" id="rt" placeholder="الوجهة (إلى)">
-      <button class="btn btn-r full" onclick="addR()">موافق وحفظ الاشتراك</button>
+  <header>
+    <div class="logo-box">
+      <h1 class="logo-text">MA'AK WEIN MAKAN</h1>
     </div>
-  </div>
+  </header>
 
-  <div id="sec-d" class="section">
-    <h2 style="color:var(--secondary)">عضوية سائق (الرسوم: 2 دينار)</h2>
-    <div class="form-grid">
-      <input type="text" id="dn" placeholder="الاسم الرباعي" class="full">
-      <input type="tel" id="dp" placeholder="رقم الخلوي">
-      <input type="text" id="dt" placeholder="نوع السيارة">
-      <input type="text" id="dl" placeholder="رقم اللوحة">
-      <button class="btn btn-d full" onclick="addD()">موافق وحفظ البيانات</button>
-    </div>
-  </div>
-
-  <div id="sec-admin" class="section">
-    <h2 style="text-align:center;">📊 إحصائيات شمس الدين</h2>
-    
-    <div class="stats-container">
-      <div class="stat-card" style="background:var(--blue)">الركاب<span id="c-r" class="stat-val">0</span></div>
-      <div class="stat-card" style="background:var(--secondary); color:#000">السائقين<span id="c-d" class="stat-val">0</span></div>
-      <div class="stat-card" style="background:var(--dark)">المجموع (JOD)<span id="sum-all" class="stat-val">0</span></div>
+  <main>
+    <div class="nav-bar">
+      <button class="btn btn-r" onclick="showSection('passenger')">تسجيل راكب</button>
+      <button class="btn btn-d" onclick="showSection('driver')">تسجيل سائق</button>
     </div>
 
-    <div class="tabs">
-      <div class="tab active" onclick="switchTab('male')">الركاب الذكور 🧔</div>
-      <div class="tab" onclick="switchTab('female')">الركاب الإناث 🧕</div>
-      <div class="tab" onclick="switchTab('drivers')">السائقين 🚕</div>
+    <div id="passenger" class="section" style="display:block;">
+      <h2>نموذج طلب راكب</h2>
+      <p>أدخل بياناتك وسيتم التواصل معك فوراً.</p>
     </div>
+  </main>
 
-    <div id="tab-male" class="tab-content"></div>
-    <div id="tab-female" class="tab-content" style="display:none"></div>
-    <div id="tab-drivers" class="tab-content" style="display:none"></div>
-
-    <div style="margin-top:25px; display:flex; gap:10px;">
-      <button class="btn btn-a btn-print" style="flex:1" onclick="window.print()">🖨️ طباعة التقرير</button>
-      <button class="btn btn-r btn-print" style="flex:1" onclick="clearAllData()">⚠️ مسح كافة البيانات</button>
+  <footer>
+    <div class="road">
+      <div class="car-container">🚗</div>
     </div>
-  </div>
+    <p>© 2025 Ma'ak Wein Makan - جميع الحقوق محفوظة</p>
+  </footer>
 
-  <div id="sec-login" class="section" style="max-width:400px; text-align:center;">
-    <h2>دخول الإدارة</h2>
-    <input type="text" id="user" placeholder="اسم المستخدم" style="margin-bottom:10px">
-    <input type="password" id="pass" placeholder="كلمة المرور">
-    <button class="btn btn-a" style="width:100%; margin-top:15px" onclick="login()">دخول</button>
-  </div>
-</main>
-
-<footer>
-  <div class="road">
-    <div class="car-container">
-      <svg fill="var(--accent)" width="60" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11L3 12v8h2v-1h12v1h2v-8l-2.08-5.99z"/></svg>
-    </div>
-  </div>
-  <p>© 2025 معاك وين ماكان | 0798266006</p>
-</footer>
-
-<script>
-  // تحميل البيانات من المتصفح عند فتح الصفحة
-  let db = JSON.parse(localStorage.getItem('maakDB')) || { r: [], d: [] };
-
-  function saveData() {
-    localStorage.setItem('maakDB', JSON.stringify(db));
-  }
-
-  function show(id) {
-    document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-  }
-
-  function addR() {
-    const name = document.getElementById('rn').value;
-    if(!name) return alert("يرجى إدخال الاسم");
-    db.r.push({ n: name, g: document.getElementById('rg').value, f: document.getElementById('rf').value, t: document.getElementById('rt').value, s: 1 });
-    saveData();
-    alert("تم حفظ الراكب بنجاح ✅"); clear();
-  }
-
-  function addD() {
-    const name = document.getElementById('dn').value;
-    if(!name) return alert("يرجى إدخال اسم السائق");
-    db.d.push({ n: name, s: 2, c: document.getElementById('dt').value, l: document.getElementById('dl').value });
-    saveData();
-    alert("تم حفظ السائق بنجاح ✅"); clear();
-  }
-
-  function login() {
-    if(document.getElementById('user').value === 'admin' && document.getElementById('pass').value === 'shamsaldeen@123') {
-      renderAdmin(); show('sec-admin');
-    } else alert("بيانات الدخول خاطئة!");
-  }
-
-  function renderAdmin() {
-    const males = db.r.filter(x => x.g === 'ذكر');
-    const females = db.r.filter(x => x.g === 'أنثى');
-    const total = (db.r.length * 1) + (db.d.length * 2);
-
-    document.getElementById('c-r').innerText = db.r.length;
-    document.getElementById('c-d').innerText = db.d.length;
-    document.getElementById('sum-all').innerText = total;
-
-    document.getElementById('tab-male').innerHTML = createTable(males, ['الاسم', 'من', 'إلى']);
-    document.getElementById('tab-female').innerHTML = createTable(females, ['الاسم', 'من', 'إلى']);
-    document.getElementById('tab-drivers').innerHTML = createTable(db.d, ['الاسم', 'السيارة', 'اللوحة']);
-  }
-
-  function createTable(data, cols) {
-    if(data.length === 0) return "<p style='text-align:center; padding:20px;'>لا توجد بيانات حالياً</p>";
-    let h = `<table><tr>` + cols.map(c => `<th>${c}</th>`).join('') + `</tr>`;
-    data.forEach(item => {
-      h += `<tr><td>${item.n}</td><td>${item.f || item.c}</td><td>${item.t || item.l}</td></tr>`;
-    });
-    return h + `</table>`;
-  }
-
-  function switchTab(type) {
-    document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('tab-' + type).style.display = 'block';
-    event.currentTarget.classList.add('active');
-  }
-
-  function clearAllData() {
-    if(confirm("هل أنت متأكد من مسح جميع البيانات؟ لا يمكن التراجع عن هذا الإجراء.")) {
-      db = { r: [], d: [] };
-      saveData();
-      renderAdmin();
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
     }
-  }
-
-  function clear() { document.querySelectorAll('input').forEach(i => i.value = ''); }
-</script>
+  </script>
 </body>
 </html>
